@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section className="tech-gradient text-white py-28 md:py-32">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
+          <div className="animate-fade-in z-10">
             <h1 className="heading-xl mb-6">We Build Digital Brands that Win Trust.</h1>
             <p className="text-lg md:text-xl opacity-90 mb-8">
               GTH Digital Academy — Turning Dreams to Reality with Code, Design, and Strategy.
@@ -29,13 +29,13 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-full h-64 sm:h-80 flex items-center justify-center">
               <div className="absolute w-full h-full bg-blue-500/10 rounded-full blur-3xl"></div>
               <img 
                 src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
                 alt="GTH Digital Academy Logo" 
-                className="w-4/5 h-auto object-contain animate-fade-in z-10"
+                className="w-4/5 h-auto object-contain animate-fade-in z-10 relative"
               />
             </div>
           </div>

@@ -1,7 +1,7 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Layout from '@/components/Layout';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (

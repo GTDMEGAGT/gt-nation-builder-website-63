@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Layout from '@/components/Layout';
-import { ArrowRight, Code, Smartphone, Palette, Database, Brain, BarChart, Video, LineChart } from 'lucide-react';
+import { ArrowRight, Code, Smartphone, Palette, Database, Brain, BarChart, Video, LineChart, Users, User } from 'lucide-react';
 import { useState } from 'react';
 
 interface Course {

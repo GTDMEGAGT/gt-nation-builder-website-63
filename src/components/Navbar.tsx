@@ -12,17 +12,22 @@ const Navbar = () => {
 
   const menuItems = [
     { text: 'Home', path: '/' },
-    { text: 'My Story', path: '/story' },
-    { text: 'Ecosystem', path: '/ecosystem' },
-    { text: 'Sponsorship', path: '/sponsor' },
-    { text: 'Content', path: '/content' },
+    { text: 'Portfolio', path: '/portfolio' },
+    { text: 'Skills', path: '/skills' },
+    { text: 'Services', path: '/services' },
     { text: 'Contact', path: '/contact' },
   ];
 
   return (
-    <nav className="bg-white py-4 px-6 shadow-sm fixed w-full z-50">
+    <nav className="bg-black py-4 px-6 shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="text-navy font-poppins font-bold text-xl">GT</Link>
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
+            alt="GTH Digital Academy" 
+            className="h-12 md:h-14"
+          />
+        </Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
@@ -30,17 +35,17 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.path}
-              className="font-medium text-gray-600 hover:text-navy transition-colors"
+              className="font-medium text-gray-300 hover:text-primary transition-colors"
             >
               {item.text}
             </Link>
           ))}
-          <Button className="btn-primary">Sponsor Me</Button>
+          <Button className="bg-primary text-white hover:bg-primary/90">Let's Build Yours</Button>
         </div>
         
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-navy"
+          className="md:hidden text-white"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -58,20 +63,20 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute left-0 right-0 bg-white border-t border-gray-200 shadow-lg animate-fade-in">
+        <div className="md:hidden absolute left-0 right-0 bg-black border-t border-gray-800 shadow-lg animate-fade-in">
           <div className="flex flex-col py-4">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className="px-6 py-3 text-gray-600 hover:bg-gray-100 transition-colors"
+                className="px-6 py-3 text-gray-300 hover:bg-gray-900 hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.text}
               </Link>
             ))}
             <div className="px-6 py-4">
-              <Button className="btn-primary w-full">Sponsor Me</Button>
+              <Button className="bg-primary text-white w-full hover:bg-primary/90">Let's Build Yours</Button>
             </div>
           </div>
         </div>

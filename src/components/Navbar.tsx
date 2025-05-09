@@ -12,9 +12,13 @@ const Navbar = () => {
 
   const menuItems = [
     { text: 'Home', path: '/' },
+    { text: 'About', path: '/about' },
     { text: 'Portfolio', path: '/portfolio' },
     { text: 'Skills', path: '/skills' },
     { text: 'Services', path: '/services' },
+    { text: 'Courses', path: '/courses' },
+    { text: "GT's Journey", path: '/story' },
+    { text: 'Content', path: '/content' },
     { text: 'Contact', path: '/contact' },
   ];
 
@@ -40,7 +44,9 @@ const Navbar = () => {
               {item.text}
             </Link>
           ))}
-          <Button className="bg-primary text-white hover:bg-primary/90">Let's Build Yours</Button>
+          <Button asChild className="bg-primary text-white hover:bg-primary/90">
+            <Link to="/sponsor">Sponsor</Link>
+          </Button>
         </div>
         
         {/* Mobile Menu Button */}
@@ -76,7 +82,9 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="px-6 py-4">
-              <Button className="bg-primary text-white w-full hover:bg-primary/90">Let's Build Yours</Button>
+              <Button asChild className="bg-primary text-white w-full hover:bg-primary/90">
+                <Link to="/sponsor">Sponsor</Link>
+              </Button>
             </div>
           </div>
         </div>

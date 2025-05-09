@@ -16,7 +16,7 @@ const Content = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="heading-xl mb-6">Content Hub</h1>
             <p className="text-xl opacity-90 mb-8">
-              Insights, education, and updates from across my platforms
+              Insights, education, and updates from across our platforms
             </p>
           </div>
         </div>

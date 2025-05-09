@@ -16,7 +16,7 @@ import Story from "./pages/Story";
 import Sponsor from "./pages/Sponsor";
 import Content from "./pages/Content";
 import Courses from "./pages/Courses";
-
+import { Analytics } from '@vercel/analytics/react';
 // Create the query client outside the component
 const queryClient = new QueryClient();
 

@@ -1,0 +1,8 @@
+[run]
+command = "bun run dev"
+
+[packages]
+bun = "1.2.5" # Or nodejs = "20.x" for npm
+
+[env]
+NODE_ENV = "development"

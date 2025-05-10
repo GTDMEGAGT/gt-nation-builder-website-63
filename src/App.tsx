@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -11,8 +12,19 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import Skills from "./pages/Skills";
-import NotFound from "./pages/NotFound"; 
-// ... other page imports ...
+import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Courses from "./pages/Courses";
+import Story from "./pages/Story";
+import Content from "./pages/Content";
+import Contact from "./pages/Contact";
+import Sponsor from "./pages/Sponsor";
+
+// Create Privacy and Terms pages
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Partner from "./pages/Partner";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +37,18 @@ const App = () => {
             <BrowserRouter basename="/">
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/portfolio" element={<Portfolio />} />
-                {/* ... other routes ... */}
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/courses" element={<Courses />} />
+                <Route path="/story" element={<Story />} />
+                <Route path="/content" element={<Content />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/sponsor" element={<Sponsor />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/partner" element={<Partner />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

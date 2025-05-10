@@ -1,11 +1,12 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,6 +23,13 @@ const Navbar = () => {
     { text: 'Content', path: '/content' },
     { text: 'Contact', path: '/contact' },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/' && location.pathname === '/') {
+      return true;
+    }
+    return path !== '/' && location.pathname.startsWith(path);
+  };
 
   return (
     <nav className="bg-background py-4 px-6 shadow-md fixed w-full z-50 border-b border-border">
@@ -40,7 +48,9 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.path}
-              className="font-medium text-foreground hover:text-primary transition-colors"
+              className={`font-medium hover:text-primary transition-colors ${
+                isActive(item.path) ? 'text-primary' : 'text-foreground'
+              }`}
             >
               {item.text}
             </Link>
@@ -80,7 +90,9 @@ const Navbar = () => {
               <Link
                 key={index}
                 to={item.path}
-                className="px-6 py-3 text-foreground hover:bg-accent hover:text-primary transition-colors"
+                className={`px-6 py-3 hover:bg-accent hover:text-primary transition-colors ${
+                  isActive(item.path) ? 'text-primary' : 'text-foreground'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.text}

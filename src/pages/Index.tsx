@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Smartphone, Palette, Database, Brain, BarChart, Video, Laptop, LineChart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,7 @@ const HeroSection = () => {
             <p className="text-lg md:text-xl opacity-90 mb-8">
               GTH Digital Academy — Turning Dreams to Reality with Code, Design, and Strategy.
             </p>
-            <p className="mb-8 text-gray-300">
+            <p className="mb-8 text-gray-specific">
               Transform your business ideas into powerful digital realities with our expert team of developers, designers, and digital strategists.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -84,7 +83,7 @@ const ServicesSection = () => {
     <section className="section">
       <div className="text-center mb-16">
         <h2 className="heading-lg mb-4">What We Do</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <p className="text-gray-muted max-w-2xl mx-auto">
           We build complete digital solutions for businesses of all sizes
         </p>
       </div>
@@ -94,7 +93,7 @@ const ServicesSection = () => {
           <div key={index} className="gth-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
             <div className="text-primary mb-4">{service.icon}</div>
             <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-            <p className="text-gray-400">{service.description}</p>
+            <p className="text-gray-muted">{service.description}</p>
           </div>
         ))}
       </div>
@@ -144,7 +143,7 @@ const TechnologiesSection = () => {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="heading-lg mb-4">Technologies We Work With</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-muted max-w-2xl mx-auto">
             Our team is proficient in a wide range of modern technologies
           </p>
         </div>
@@ -155,7 +154,7 @@ const TechnologiesSection = () => {
               <h3 className="text-xl font-bold mb-4 text-primary">{group.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {group.techs.map((tech, techIndex) => (
-                  <span key={techIndex} className="bg-black px-3 py-1 rounded-full text-sm text-gray-300">
+                  <span key={techIndex} className="bg-black px-3 py-1 rounded-full text-sm text-gray-specific">
                     {tech}
                   </span>
                 ))}
@@ -202,15 +201,15 @@ const StatsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="gth-card">
             <div className="animated-counter">{counts.projects}+</div>
-            <div className="text-lg mt-2 text-gray-300">Projects Executed</div>
+            <div className="text-lg mt-2 text-gray-specific">Projects Executed</div>
           </div>
           <div className="gth-card">
             <div className="animated-counter">{counts.languages}+</div>
-            <div className="text-lg mt-2 text-gray-300">Languages & Stacks Mastered</div>
+            <div className="text-lg mt-2 text-gray-specific">Languages & Stacks Mastered</div>
           </div>
           <div className="gth-card">
             <div className="animated-counter">{counts.satisfaction}%</div>
-            <div className="text-lg mt-2 text-gray-300">Client Satisfaction</div>
+            <div className="text-lg mt-2 text-gray-specific">Client Satisfaction</div>
           </div>
         </div>
       </div>
@@ -224,7 +223,7 @@ const TestimonialsSection = () => {
     <section className="section">
       <div className="text-center mb-16">
         <h2 className="heading-lg mb-4">Client Testimonials</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <p className="text-gray-muted max-w-2xl mx-auto">
           What our clients say about working with GTH Digital Academy
         </p>
       </div>
@@ -233,14 +232,14 @@ const TestimonialsSection = () => {
         {[...Array(3)].map((_, index) => (
           <div key={index} className="gth-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
             <div className="text-primary mb-4">★★★★★</div>
-            <p className="mb-6 text-gray-300">
+            <p className="mb-6 text-gray-specific">
               "GTH Digital Academy transformed our online presence completely. Their team delivered beyond our expectations with a website that perfectly captures our brand essence."
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
               <div>
                 <h4 className="font-bold">Client Name</h4>
-                <p className="text-sm text-gray-400">Position, Company</p>
+                <p className="text-sm text-gray-muted">Position, Company</p>
               </div>
             </div>
           </div>
@@ -252,7 +251,7 @@ const TestimonialsSection = () => {
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           {[...Array(5)].map((_, index) => (
             <div key={index} className="w-32 h-20 bg-secondary rounded-md flex items-center justify-center">
-              <span className="text-gray-500">Partner Logo</span>
+              <span className="text-gray-specific">Partner Logo</span>
             </div>
           ))}
         </div>

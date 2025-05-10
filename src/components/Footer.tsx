@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Twitter, Instagram, Linkedin, Youtube, MessageSquare } from 'lucide-react';
+import SocialIcons from './SocialIcons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,36 +16,25 @@ const Footer = () => {
               alt="GTH Digital Academy" 
               className="h-16 mb-4"
             />
-            <p className="mb-6 text-gray-300">"Turning Digital Dreams into Global Brands."</p>
-            <div className="flex space-x-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors">
-                <Youtube size={20} />
-              </a>
-            </div>
+            <p className="mb-6 text-gray-specific">"Turning Digital Dreams into Global Brands."</p>
+            <SocialIcons iconColor="gray-specific" />
           </div>
           
           <div className="md:col-span-1">
             <h3 className="font-poppins font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/portfolio" className="text-gray-300 hover:text-primary transition-colors">Portfolio</Link></li>
-              <li><Link to="/skills" className="text-gray-300 hover:text-primary transition-colors">Skills & Stack</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-primary transition-colors">Our Services</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-primary transition-colors">Contact Us</Link></li>
+              <li><Link to="/" className="text-gray-specific hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to="/portfolio" className="text-gray-specific hover:text-primary transition-colors">Portfolio</Link></li>
+              <li><Link to="/skills" className="text-gray-specific hover:text-primary transition-colors">Skills & Stack</Link></li>
+              <li><Link to="/services" className="text-gray-specific hover:text-primary transition-colors">Our Services</Link></li>
+              <li><Link to="/courses" className="text-gray-specific hover:text-primary transition-colors">Courses</Link></li>
+              <li><Link to="/contact" className="text-gray-specific hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
           
           <div className="md:col-span-1">
             <h3 className="font-poppins font-bold text-lg mb-4">Get In Touch</h3>
-            <a href="https://wa.me/1234567890" className="flex items-center text-gray-300 hover:text-primary transition-colors mb-4">
+            <a href="https://wa.me/1234567890" className="flex items-center text-gray-specific hover:text-primary transition-colors mb-4">
               <MessageSquare size={20} className="mr-2" />
               <span>WhatsApp Support</span>
             </a>
@@ -59,7 +49,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-gray-400">
+        <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-gray-muted">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>&copy; {currentYear} GTH Digital Academy. All Rights Reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">

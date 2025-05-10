@@ -185,42 +185,45 @@
 
   /* Theme-specific styling for text in special sections */
   .dark .tech-gradient {
-    @apply text-white;
+    color: #ffffff;
   }
   
   .light .tech-gradient {
-    @apply text-white;
+    color: #ffffff;
   }
   
-  .dark .text-gray-300 {
-    @apply text-gray-300;
+  .dark .text-gray-specific {
+    color: #d1d5db;  /* Equivalent to gray-300 in dark mode */
   }
   
-  .light .text-gray-300 {
-    @apply text-gray-700;
+  .light .text-gray-specific {
+    color: #374151;  /* Equivalent to gray-700 in light mode */
   }
   
-  .dark .text-gray-400 {
-    @apply text-gray-400;
+  .dark .text-gray-muted {
+    color: #9ca3af;  /* Equivalent to gray-400 in dark mode */
   }
   
-  .light .text-gray-400 {
-    @apply text-gray-600;
+  .light .text-gray-muted {
+    color: #4b5563;  /* Equivalent to gray-600 in light mode */
   }
   
   .dark .bg-secondary {
-    @apply bg-secondary text-white;
+    background-color: hsl(var(--secondary));
+    color: #ffffff;
   }
   
   .light .bg-secondary {
-    @apply bg-secondary text-black;
+    background-color: hsl(var(--secondary));
+    color: #000000;
   }
 
   .dark .bg-black {
-    @apply text-white;
+    color: #ffffff;
   }
   
   .light .bg-black {
-    @apply bg-gray-900 text-white;
+    background-color: #111827;  /* gray-900 */
+    color: #ffffff;
   }
 }

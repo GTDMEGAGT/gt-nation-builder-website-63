@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
   // Your existing customizations
   server: {
     host: "::", // Listen on all IPv6 interfaces
-    port: 4174,
+    port: 8080,
     strictPort: true // Prevent fallback to other ports
   },
   plugins: [

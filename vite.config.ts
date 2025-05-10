@@ -4,34 +4,37 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Vercel-required settings
   base: '/',
+  plugins: [
+    react(),
+    mode === 'development' && componentTagger()
+  ].filter(Boolean),
+  
   build: {
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      external: ['@vercel/analytics/react'] // Only if using Vercel Analytics
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js'
+      }
     }
   },
-
-  // Your existing customizations
+  
   server: {
-    host: "::", // Listen on all IPv6 interfaces
+    host: true, // Listen on all interfaces
     port: 8080,
-    strictPort: true // Prevent fallback to other ports
+    strictPort: true
   },
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger() // Conditional plugin
-  ].filter(Boolean),
+  
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    },
+    }
   },
-
-  // Optional optimization for Vercel
+  
   optimizeDeps: {
-    exclude: ['@babel/types', 'postcss-selector-parser'] // Reduce build size
+    include: ['@vercel/analytics/react'] // Include analytics in optimization
   }
 }));

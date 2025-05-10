@@ -62,7 +62,7 @@
     --accent: 0 0% 15%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 15%;
@@ -181,5 +181,46 @@
 
   .tech-gradient {
     @apply bg-gradient-to-br from-black to-blue-800;
+  }
+
+  /* Theme-specific styling for text in special sections */
+  .dark .tech-gradient {
+    @apply text-white;
+  }
+  
+  .light .tech-gradient {
+    @apply text-white;
+  }
+  
+  .dark .text-gray-300 {
+    @apply text-gray-300;
+  }
+  
+  .light .text-gray-300 {
+    @apply text-gray-700;
+  }
+  
+  .dark .text-gray-400 {
+    @apply text-gray-400;
+  }
+  
+  .light .text-gray-400 {
+    @apply text-gray-600;
+  }
+  
+  .dark .bg-secondary {
+    @apply bg-secondary text-white;
+  }
+  
+  .light .bg-secondary {
+    @apply bg-secondary text-black;
+  }
+
+  .dark .bg-black {
+    @apply text-white;
+  }
+  
+  .light .bg-black {
+    @apply bg-gray-900 text-white;
   }
 }

@@ -8,17 +8,16 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger()
-  ].filter(Boolean),
+  base: '/',  // ← Add this line
+  plugins: [react()],
+  build: {
+    outDir: 'dist',  // Ensure this exists
+    emptyOutDir: true
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  build: {  // 👈 Add this new section
-    rollupOptions: {
-      external: ['@vercel/analytics/react']
-    }  }
+  }
+
 }));

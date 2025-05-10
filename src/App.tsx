@@ -4,7 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Analytics } from '@vercel/analytics/react'; // Moved to top with other imports
+import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 // Pages
 import Index from "./pages/Index";
@@ -19,19 +20,21 @@ const App = () => {
   return (
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <BrowserRouter basename="/"> {/* Added basename */}
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              {/* ... other routes ... */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-          <Analytics /> {/* Correct placement */}
-          <Toaster />
-          <Sonner />
-        </TooltipProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            <BrowserRouter basename="/">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                {/* ... other routes ... */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+            <Analytics />
+            <Toaster />
+            <Sonner />
+          </TooltipProvider>
+        </ThemeProvider>
       </QueryClientProvider>
     </React.StrictMode>
   );

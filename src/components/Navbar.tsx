@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-black py-4 px-6 shadow-md fixed w-full z-50">
+    <nav className="bg-background py-4 px-6 shadow-md fixed w-full z-50 border-b border-border">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img 
@@ -39,43 +40,47 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.path}
-              className="font-medium text-gray-300 hover:text-primary transition-colors"
+              className="font-medium text-foreground hover:text-primary transition-colors"
             >
               {item.text}
             </Link>
           ))}
+          <ThemeToggle />
           <Button asChild className="bg-primary text-white hover:bg-primary/90">
             <Link to="/sponsor">Sponsor</Link>
           </Button>
         </div>
         
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            className="text-foreground"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute left-0 right-0 bg-black border-t border-gray-800 shadow-lg animate-fade-in">
+        <div className="md:hidden absolute left-0 right-0 bg-background border-t border-border shadow-lg animate-fade-in">
           <div className="flex flex-col py-4">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className="px-6 py-3 text-gray-300 hover:bg-gray-900 hover:text-primary transition-colors"
+                className="px-6 py-3 text-foreground hover:bg-accent hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.text}

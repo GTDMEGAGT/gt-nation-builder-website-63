@@ -50,7 +50,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
-            alt="GTH Digital" 
+            alt="Tech-x4 Logo" 
             className="h-10 md:h-12"
           />
         </Link>

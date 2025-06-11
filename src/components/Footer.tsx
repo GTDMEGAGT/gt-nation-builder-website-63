@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <img 
               src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
-              alt="GTH Digital Academy" 
+              alt="Tech-x4" 
               className="h-16 mb-4"
             />
             <p className="mb-6 text-gray-specific">"Turning Digital Dreams into Global Brands."</p>

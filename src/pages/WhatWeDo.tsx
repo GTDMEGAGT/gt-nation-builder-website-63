@@ -324,7 +324,7 @@ const WhatWeDo = () => {
           <div className="order-1 lg:order-2">
             <img 
               src="/placeholder.svg" 
-              alt="GTH Digital Academy Tools" 
+              alt="Tech-X4 Tools" 
               className="w-full h-[400px] object-cover rounded-lg shadow-xl"
             />
           </div>
@@ -336,7 +336,7 @@ const WhatWeDo = () => {
         <div className="container-custom text-center">
           <h2 className="heading-lg mb-6">Ready to Start Your Digital Journey?</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Join GTH Digital Academy today and transform your digital skills
+            Join Tech-X4 today and transform your digital skills
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="btn-secondary">

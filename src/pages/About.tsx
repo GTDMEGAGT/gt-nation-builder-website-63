@@ -4,6 +4,33 @@ import { Button } from "@/components/ui/button";
 import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
 
+const teamMembers = [
+  {
+    name: "Onisuru Tejiri Godstime GT",
+    role: "CEO/Founder, TECH-X4",
+    image: "/1.png",
+    bio: "Expert in educational innovation with 7+ years leading tutorial brands."
+  },
+  {
+    name: "Dowei Timi Ebike",
+    role: "CEO/Co-Founder, TECH-X4",
+    image: "/2.png",
+    bio: "Passionate about clean Infastructure and creating seamless digital experiences."
+  },
+  {
+    name: "Dowei Doubra Ebike",
+    role: "Full Stack Developer",
+    image: "/tolu.jpg",
+    bio: "Builds scalable apps and loves solving real-world tech challenges."
+  },
+  {
+    name: "Rume Humphrey",
+    role: "Content Strategist",
+    image: "/adaeze.jpg",
+    bio: "Crafts engaging content to fuel learning and audience growth."
+  }
+];
+
 const About = () => {
   return (
     <Layout>
@@ -11,7 +38,7 @@ const About = () => {
       <section className="bg-gradient-to-br from-black to-blue-700 text-white py-16 md:py-24">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl mb-6 animate-fade-in">About GTH Digital Academy</h1>
+            <h1 className="heading-xl mb-6 animate-fade-in">About Tech-X4</h1>
             <p className="text-xl opacity-90 mb-8 animate-fade-in" style={{animationDelay: "0.1s"}}>
               Empowering dreams and building digital futures since 2020
             </p>
@@ -48,8 +75,8 @@ const About = () => {
           
           <div className="rounded-lg overflow-hidden shadow-xl animate-slide-in-right">
             <img 
-              src="/placeholder.svg" 
-              alt="GTH Digital Academy Team" 
+              src="/tech-x4_cover.png" 
+              alt="Tech-x4 Team" 
               className="w-full h-[400px] object-cover"
             />
           </div>
@@ -60,9 +87,9 @@ const About = () => {
       <section className="bg-gray-50 py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Our Core Values</h2>
+            <h2 className="heading-lg text-gray-600 mb-4">Our Core Values</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do at GTH Digital Academy
+              The principles that guide everything we do at TECH-X4
             </p>
           </div>
           
@@ -103,13 +130,14 @@ const About = () => {
               {year: "2021", title: "First Cohort", description: "Launched our first official web development bootcamp with 20 students"},
               {year: "2022", title: "Expansion", description: "Added courses in digital marketing, UI/UX design and mobile development"},
               {year: "2023", title: "Community Growth", description: "Reached 1,000+ students across multiple courses and programs"},
-              {year: "2024", title: "Digital Ecosystem", description: "Developing comprehensive platform for digital skills mastery"}
+              {year: "2024", title: "Digital Ecosystem Plan", description: "planned on Developing a comprehensive platform for digital mastery"},
+              {year: "2025", title: "Digital Ecosystem Implementation", description: "Developing comprehensive platform for digital skills mastery"}
             ].map((item, index) => (
               <div key={index} className={`md:flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow animate-fade-in">
                     <div className="text-blue-500 font-bold mb-2">{item.year}</div>
-                    <h4 className="text-lg font-bold mb-2">{item.title}</h4>
+                    <h4 className="text-lg text-gray-500 font-bold mb-2">{item.title}</h4>
                     <p className="text-gray-700">{item.description}</p>
                   </div>
                 </div>
@@ -127,32 +155,34 @@ const About = () => {
       <section className="bg-gray-50 py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Our Team</h2>
+            <h2 className="heading-lg text-gray-500 mb-4">Our Team</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet the passionate educators and digital experts behind GTH Digital Academy
+              Meet the passionate educators and digital experts behind TECH-X4
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[...Array(4)].map((_, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="h-64 bg-gray-200">
-                  <img 
-                    src="/placeholder.svg" 
-                    alt={`Team Member ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg">Team Member Name</h3>
-                  <p className="text-blue-500 mb-4">Position / Role</p>
-                  <p className="text-gray-600 text-sm">
-                    Brief bio about the team member and their expertise in digital education.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+  {teamMembers.map((member, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-lg overflow-hidden shadow-md text-center animate-fade-in"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="h-64 bg-gray-200">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="font-bold text-gray-600 text-lg">{member.name}</h3>
+        <p className="text-blue-500 mb-4">{member.role}</p>
+        <p className="text-gray-600 text-sm">{member.bio}</p>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
       

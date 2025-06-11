@@ -10,7 +10,7 @@ const Partner = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="heading-lg mb-8 text-center">Become a Partner</h1>
           <p className="text-gray-specific text-lg mb-8 text-center">
-            Join our network of partners and grow your business with GTH Digital Academy
+            Join our network of partners and grow your business with Tech-X4
           </p>
           
           <div className="grid md:grid-cols-2 gap-12 mt-12">

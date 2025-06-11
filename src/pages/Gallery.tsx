@@ -243,7 +243,7 @@ const Gallery = () => {
           <div className="mb-12">
             <h2 className="heading-lg mb-4">Our Brand</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              The GTH Digital Academy logo represents our mission of turning dreams into digital reality
+              The Tech-x4 logo represents our mission of turning dreams into digital reality
             </p>
           </div>
           
@@ -251,7 +251,7 @@ const Gallery = () => {
             <div className="bg-white p-8 rounded-lg shadow-md inline-block">
               <img 
                 src="/lovable-uploads/4c7bd24c-48e2-4607-ab7c-333a1b002183.png" 
-                alt="GTH Digital Academy Logo" 
+                alt="Tech-x4 Logo" 
                 className="max-w-[300px]"
               />
             </div>

@@ -337,7 +337,7 @@ const Courses = () => {
           <div className="text-center mb-12">
             <h2 className="heading-lg mb-4">Our Learning Approach</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              What makes GTH Digital Academy courses different?
+              What makes Tech-x4 courses different?
             </p>
           </div>
           

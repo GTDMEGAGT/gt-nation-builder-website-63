@@ -4,6 +4,29 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import Layout from '@/components/Layout';
 
+
+// Sample testimonials data
+const testimonials = [
+  {
+    name: "Yomi Omorewa",
+    title: "CEO, Pacesetter Tutorial",
+    image: "/yomi-profile.jpg",
+    text: "Tech-X4 transformed our online presence completely. Their team delivered beyond our expectations with a website that perfectly captures our brand essence.",
+  },
+  {
+    name: "Austin Titiloye",
+    title: "Founder, 30 and UP ELITES",
+    image: "/austin-profile.jpg",
+    text: "Working with Tech-X4 was a game changer. They took our vision and turned it into a stunning platform that our users love.",
+  },
+  {
+    name: "David Princess",
+    title: "Student, Tech-X4 Academy",
+    image: "/princess.jpg",
+    text: "Their professionalism and speed are unmatched. We now have a robust site that scales perfectly with our operations.",
+  },
+];
+
 const Portfolio = () => {
   // Sample portfolio projects (placeholders)
   const projects = [
@@ -98,59 +121,8 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section">
-        <div className="text-center mb-16">
-          <h2 className="heading-lg mb-4">Client Testimonials</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            What our clients say about working with GTH Digital Academy
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="gth-card">
-            <div className="text-primary mb-4">★★★★★</div>
-            <p className="mb-6 text-gray-300">
-              "GTH transformed our online presence completely. Their team delivered beyond our expectations with a website that perfectly captures our brand essence and drives results."
-            </p>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
-              <div>
-                <h4 className="font-bold">Sarah Johnson</h4>
-                <p className="text-sm text-gray-400">CEO, Fashion Brand</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="gth-card">
-            <div className="text-primary mb-4">★★★★★</div>
-            <p className="mb-6 text-gray-300">
-              "Working with GTH Digital Academy was the best decision we made for our startup. They understood our vision and created a digital ecosystem that helped us scale rapidly."
-            </p>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
-              <div>
-                <h4 className="font-bold">Michael Chen</h4>
-                <p className="text-sm text-gray-400">Founder, Tech Startup</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="gth-card">
-            <div className="text-primary mb-4">★★★★★</div>
-            <p className="mb-6 text-gray-300">
-              "The team at GTH not only built our platform but also provided valuable insights that improved our business model. Their technical expertise is unmatched."
-            </p>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
-              <div>
-                <h4 className="font-bold">Emma Williams</h4>
-                <p className="text-sm text-gray-400">Director, Educational Platform</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Testimonials Section */}
+<TestimonialsSection />
 
       {/* CTA Section */}
       <section className="tech-gradient text-white py-16">
@@ -170,6 +142,54 @@ const Portfolio = () => {
         </div>
       </section>
     </Layout>
+  );
+};
+
+const TestimonialsSection = () => {
+  return (
+    <section className="section">
+      <div className="text-center mb-16">
+        <h2 className="heading-lg mb-4">Client Testimonials</h2>
+        <p className="text-gray-muted max-w-2xl mx-auto">
+          What our clients say about working with Tech-X4
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="gth-card animate-fade-in"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="text-primary mb-4">★★★★★</div>
+            <p className="mb-6 text-gray-specific">"{testimonial.text}"</p>
+            <div className="flex items-center">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-12 h-12 rounded-full object-cover mr-4 border border-gray-300 shadow"
+              />
+              <div>
+                <h4 className="font-bold">{testimonial.name}</h4>
+                <p className="text-sm text-gray-muted">{testimonial.title}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-16">
+        <h3 className="text-xl font-bold mb-6 text-center">Our Brand Partners</h3>
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+          {[...Array(5)].map((_, index) => (
+            <div key={index} className="w-32 h-20 bg-secondary rounded-md flex items-center justify-center">
+              <span className="text-gray-specific">Partner Logo</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

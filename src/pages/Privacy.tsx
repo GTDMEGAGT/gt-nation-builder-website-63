@@ -13,7 +13,7 @@ const Privacy = () => {
             
             <h2 className="heading-md mt-8 mb-4">Introduction</h2>
             <p className="text-gray-specific mb-6">
-              At GTH Digital Academy, we respect your privacy and are committed to protecting it through our compliance with this policy.
+              At Tech-X4, we respect your privacy and are committed to protecting it through our compliance with this policy.
             </p>
             
             <h2 className="heading-md mt-8 mb-4">Information We Collect</h2>
@@ -42,9 +42,9 @@ const Privacy = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="text-gray-specific">
-              GTH Digital Academy<br />
-              Email: info@gthdigital.com<br />
-              Phone: (123) 456-7890
+              Tech-X4<br />
+              Email: tech-x4.team@tech-x4.guru<br />
+              Phone: +2347085655759
             </p>
           </div>
         </div>

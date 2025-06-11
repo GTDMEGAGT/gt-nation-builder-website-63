@@ -59,7 +59,7 @@ const HeroSection = () => {
           <div className="absolute w-full h-full bg-blue-500/10 rounded-full blur-3xl"></div>
           <img 
             src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
-            alt="GTH Digital Academy Logo" 
+            alt="Tech-X4 Logo" 
             className="w-full max-w-xs sm:max-w-sm h-auto object-contain animate-fade-in z-10 relative"
           />
         </div>
@@ -250,7 +250,7 @@ const TestimonialsSection = () => {
       <div className="text-center mb-16">
         <h2 className="heading-lg mb-4">Client Testimonials</h2>
         <p className="text-gray-muted max-w-2xl mx-auto">
-          What our clients say about working with GTH Digital Academy
+          What our clients say about working with Tech-X4
         </p>
       </div>
       

@@ -47,9 +47,10 @@ const HeroSection = () => {
           <Button asChild className="btn-secondary">
             <Link to="/contact">Let's Build Yours</Link>
           </Button>
-          <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
-            <Link to="/skills">See Our Skills</Link>
-          </Button>
+          <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
+  <Link to="/skills">See Our Skills</Link>
+</Button>
+
         </div>
       </div>
 
@@ -307,7 +308,7 @@ const CTASection = () => {
           <Button asChild className="btn-secondary">
             <Link to="/contact">Book a Free Discovery Call</Link>
           </Button>
-          <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+          <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
             <Link to="/portfolio">View Our Work</Link>
           </Button>
         </div>

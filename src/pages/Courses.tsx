@@ -295,7 +295,7 @@ const Courses = () => {
                 <button
                   key={category}
                   onClick={() => setFilter(category)}
-                  className={`px-4 py-1 rounded-full text-sm ${filter === category ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                  className={`px-4 py-1 rounded-full text-sm ${filter === category ? 'bg-blue-500 text-white' : 'bg-gray-600 hover:bg-gray-500'}`}
                 >
                   {category === 'all' ? 'All Courses' : category}
                 </button>
@@ -335,7 +335,7 @@ const Courses = () => {
       <section className="bg-gray-50 py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Our Learning Approach</h2>
+            <h2 className="heading-lg text-gray-600 mb-4">Our Learning Approach</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               What makes Tech-x4 courses different?
             </p>
@@ -361,7 +361,7 @@ const Courses = () => {
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="text-blue-500 mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <h3 className="text-xl text-blue-600 font-bold mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
@@ -426,7 +426,7 @@ const Courses = () => {
               }
             ].map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-                <h3 className="font-bold text-lg mb-2">{faq.question}</h3>
+                <h3 className="font-bold text-gray-600 text-lg mb-2">{faq.question}</h3>
                 <p className="text-gray-700">{faq.answer}</p>
               </div>
             ))}
@@ -445,7 +445,7 @@ const Courses = () => {
             <Button asChild className="bg-blue-500 hover:bg-blue-600 text-white">
               <Link to="/contact">Enroll Now</Link>
             </Button>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
               <Link to="/contact">Request Information</Link>
             </Button>
           </div>

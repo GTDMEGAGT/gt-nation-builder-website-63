@@ -32,7 +32,6 @@ const Navbar = () => {
     { text: 'Skills', path: '/skills' },
     { text: 'Services', path: '/services' },
     { text: 'Courses', path: '/courses' },
-    { text: "GT's Journey", path: '/story' },
     { text: 'Content', path: '/content' },
     { text: 'Contact', path: '/contact' },
   ];

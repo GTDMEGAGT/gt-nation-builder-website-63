@@ -84,7 +84,7 @@ const Portfolio = () => {
             <p className="text-lg md:text-xl opacity-90 mb-8">
               Explore our latest projects and see how we've transformed ideas into powerful digital solutions.
             </p>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
               <Link to="/contact" className="inline-flex items-center">
                 Start Your Project <ArrowRight size={16} className="ml-2" />
               </Link>
@@ -135,7 +135,7 @@ const Portfolio = () => {
             <Button asChild className="btn-secondary">
               <Link to="/contact">Start Your Project</Link>
             </Button>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
               <Link to="/services">Explore Our Services</Link>
             </Button>
           </div>

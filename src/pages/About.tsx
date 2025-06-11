@@ -19,13 +19,13 @@ const teamMembers = [
   },
   {
     name: "Dowei Doubra Ebike",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer, TECH-X4",
     image: "/tolu.jpg",
     bio: "Builds scalable apps and loves solving real-world tech challenges."
   },
   {
     name: "Rume Humphrey",
-    role: "Content Strategist",
+    role: "Content Strategist, TECH-X4",
     image: "/adaeze.jpg",
     bio: "Crafts engaging content to fuel learning and audience growth."
   }
@@ -74,12 +74,13 @@ const About = () => {
           </div>
           
           <div className="rounded-lg overflow-hidden shadow-xl animate-slide-in-right">
-            <img 
-              src="/tech-x4_cover.png" 
-              alt="Tech-x4 Team" 
-              className="w-full h-[400px] object-cover"
-            />
-          </div>
+  <img 
+    src="/tech-x4_cover.png" 
+    alt="Tech-x4 Team" 
+    className="w-full h-auto object-cover max-h-[400px] sm:max-h-[500px] md:max-h-[600px]"
+  />
+</div>
+
         </div>
       </section>
       
@@ -197,7 +198,7 @@ const About = () => {
             <Button asChild className="btn-secondary">
               <Link to="/courses">Explore Our Courses</Link>
             </Button>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
               <Link to="/contact">Partner With Us</Link>
             </Button>
           </div>

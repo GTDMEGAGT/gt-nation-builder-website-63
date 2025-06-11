@@ -224,13 +224,14 @@ const Skills = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img 
-              src="/tech-x4_cover.png" 
-              alt="Industry Skills" 
-              className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-            />
-          </div>
+          <div className="rounded-lg overflow-hidden shadow-xl animate-slide-in-right">
+  <img 
+    src="/tech-x4_cover.png" 
+    alt="Tech-x4 Team" 
+    className="w-full h-auto object-cover max-h-[400px] sm:max-h-[500px] md:max-h-[600px]"
+  />
+</div>
+
           <div>
             <h3 className="heading-md mb-6">Why Our Skills Matter</h3>
             <div className="space-y-4 mb-8">
@@ -283,7 +284,7 @@ const Skills = () => {
             <Button asChild className="btn-secondary">
               <Link to="/courses">Browse Courses</Link>
             </Button>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border border-border text-foreground hover:bg-muted hover:text-foreground dark:border-white dark:text-white dark:hover:bg-white/10 dark:hover:text-white">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>

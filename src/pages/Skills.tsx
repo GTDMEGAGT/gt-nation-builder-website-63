@@ -107,7 +107,7 @@ const Skills = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="heading-xl mb-6 animate-fade-in">Skills Dashboard</h1>
             <p className="text-xl opacity-90 mb-8 animate-fade-in" style={{animationDelay: "0.1s"}}>
-              Comprehensive overview of all the skills and technologies you'll master at GTH Digital Academy
+              Comprehensive overview of all the skills and technologies you'll master at <b>Tech-X4</b> 
             </p>
           </div>
         </div>
@@ -155,7 +155,7 @@ const Skills = () => {
       <section className="bg-gray-50 py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="heading-lg mb-4">Learning Paths</h2>
+            <h2 className="heading-lg text-gray-600 mb-4">Learning Paths</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Structured skill progression to take you from beginner to professional
             </p>
@@ -202,7 +202,7 @@ const Skills = () => {
             ].map((path, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="text-blue-500 mb-4">{path.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{path.title}</h3>
+                <h3 className="text-xl text-gray-600 font-bold mb-2">{path.title}</h3>
                 <div className="text-sm text-gray-500 mb-1">Duration: {path.duration}</div>
                 <div className="text-sm text-gray-500 mb-4">Level: {path.level}</div>
                 <Button asChild variant="outline" className="w-full">
@@ -226,7 +226,7 @@ const Skills = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img 
-              src="/placeholder.svg" 
+              src="/tech-x4_cover.png" 
               alt="Industry Skills" 
               className="w-full h-[400px] object-cover rounded-lg shadow-lg"
             />

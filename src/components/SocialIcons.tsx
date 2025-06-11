@@ -1,4 +1,4 @@
-
+import TiktokIcon from "@/components/TiktokIcon";
 import { Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 interface SocialIconsProps {
@@ -10,16 +10,17 @@ interface SocialIconsProps {
 const SocialIcons = ({ className = '', iconColor = 'currentColor', iconSize = 20 }: SocialIconsProps) => {
   return (
     <div className={`flex space-x-4 ${className}`}>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
+      <a href="https://x.com/TechX4_Guru" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
         <Twitter size={iconSize} />
       </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
+      <a href="https://www.instagram.com/techx4_guru/" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
         <Instagram size={iconSize} />
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
-        <Linkedin size={iconSize} />
+      <a href="https://www.tiktok.com/@techx4_guru" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
+        
+        <TiktokIcon width={iconSize} height={iconSize} />
       </a>
-      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
+      <a href="https://www.youtube.com/channel/UC2Ib304K6-yw2e3o0wBVZyA" target="_blank" rel="noopener noreferrer" className={`hover:opacity-80 transition-opacity text-${iconColor}`}>
         <Youtube size={iconSize} />
       </a>
     </div>

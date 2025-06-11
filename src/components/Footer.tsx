@@ -34,24 +34,42 @@ const Footer = () => {
           
           <div className="md:col-span-1">
             <h3 className="font-poppins font-bold text-lg mb-4">Get In Touch</h3>
-            <a href="https://wa.me/1234567890" className="flex items-center text-gray-specific hover:text-primary transition-colors mb-4">
+            <a href="https://wa.me/7085655759" className="flex items-center text-gray-specific hover:text-primary transition-colors mb-4">
               <MessageSquare size={20} className="mr-2" />
               <span>WhatsApp Support</span>
             </a>
-            <form className="flex flex-col space-y-3">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="px-4 py-2 bg-secondary text-white border border-border rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
-              />
-              <button type="submit" className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">Subscribe</button>
-            </form>
+            <form 
+   action="https://guru.us14.list-manage.com/subscribe/post?u=184559d44d209c2462827381a&amp;id=10a7d9ed29&amp;f_id=001799e1f0" 
+   method="post"
+  target="_blank"
+  className="flex flex-col space-y-3"
+>
+  <input 
+    type="email" 
+    name="EMAIL"
+    placeholder="Your email" 
+    className="px-4 py-2 bg-secondary text-white border border-border rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
+    required
+  />
+
+  <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
+    <input type="text" name="b_abc123_def456" tabIndex={-1} defaultValue="" />
+  </div>
+
+  <button 
+    type="submit" 
+    className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+  >
+    Subscribe
+  </button>
+</form>
+
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-gray-muted">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; {currentYear} GTH Digital Academy. All Rights Reserved.</p>
+            <p>&copy; {currentYear} TECH-X4. All Rights Reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <span>|</span>
@@ -65,7 +83,7 @@ const Footer = () => {
       
       {/* Floating WhatsApp Button */}
       <a 
-        href="https://wa.me/1234567890" 
+        href="https://wa.me/7085655759" 
         className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
         aria-label="Contact on WhatsApp"
       >

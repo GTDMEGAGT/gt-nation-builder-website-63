@@ -5,42 +5,68 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Layout from '@/components/Layout';
 import { useEffect, useState } from 'react';
 
+// Sample testimonials data
+const testimonials = [
+  {
+    name: "Yomi Omorewa",
+    title: "CEO, Pacesetter Tutorial",
+    image: "/yomi-profile.jpg",
+    text: "Tech-X4 transformed our online presence completely. Their team delivered beyond our expectations with a website that perfectly captures our brand essence.",
+  },
+  {
+    name: "Austin Titiloye",
+    title: "Founder, 30 and UP ELITES",
+    image: "/austin-profile.jpg",
+    text: "Working with Tech-X4 was a game changer. They took our vision and turned it into a stunning platform that our users love.",
+  },
+  {
+    name: "David Princess",
+    title: "Student, Tech-X4 Academy",
+    image: "/princess.jpg",
+    text: "Their professionalism and speed are unmatched. We now have a robust site that scales perfectly with our operations.",
+  },
+];
+
+
 // Hero Section Component
 const HeroSection = () => {
   return (
-    <section className="tech-gradient text-white py-28 md:py-32">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in z-10">
-            <h1 className="heading-xl mb-6">We Build Digital Brands that Win Trust.</h1>
-            <p className="text-lg md:text-xl opacity-90 mb-8">
-              GTH Digital Academy — Turning Dreams to Reality with Code, Design, and Strategy.
-            </p>
-            <p className="mb-8 text-gray-specific">
-              Transform your business ideas into powerful digital realities with our expert team of developers, designers, and digital strategists.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-secondary">
-                <Link to="/contact">Let's Build Yours</Link>
-              </Button>
-              <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
-                <Link to="/skills">See Our Skills</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full h-64 sm:h-80 flex items-center justify-center">
-              <div className="absolute w-full h-full bg-blue-500/10 rounded-full blur-3xl"></div>
-              <img 
-                src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
-                alt="GTH Digital Academy Logo" 
-                className="w-4/5 h-auto object-contain animate-fade-in z-10 relative"
-              />
-            </div>
-          </div>
+    <section className="tech-gradient text-white py-20 md:py-32">
+  <div className="container-custom">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12 items-center">
+      {/* Text Content */}
+      <div className="animate-fade-in z-10 order-1 lg:order-none">
+        <h1 className="heading-xl mb-6">We Build Digital Brands that Win Trust.</h1>
+        <p className="text-lg md:text-xl opacity-90 mb-8">
+          TECH-X4 — The Next Generation Digital Ecosystem.
+        </p>
+        <p className="mb-8 text-gray-specific">
+          Transform your business ideas into powerful digital realities with our expert team of developers, designers, and digital strategists.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button asChild className="btn-secondary">
+            <Link to="/contact">Let's Build Yours</Link>
+          </Button>
+          <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white">
+            <Link to="/skills">See Our Skills</Link>
+          </Button>
         </div>
       </div>
-    </section>
+
+      {/* Image Container */}
+      <div className="relative order-first lg:order-none mb-8 lg:mb-0">
+        <div className="relative w-full max-w-md mx-auto h-64 sm:h-80 flex items-center justify-center">
+          <div className="absolute w-full h-full bg-blue-500/10 rounded-full blur-3xl"></div>
+          <img 
+            src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
+            alt="GTH Digital Academy Logo" 
+            className="w-full max-w-xs sm:max-w-sm h-auto object-contain animate-fade-in z-10 relative"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   );
 };
 
@@ -229,22 +255,30 @@ const TestimonialsSection = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[...Array(3)].map((_, index) => (
-          <div key={index} className="gth-card animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
-            <div className="text-primary mb-4">★★★★★</div>
-            <p className="mb-6 text-gray-specific">
-              "GTH Digital Academy transformed our online presence completely. Their team delivered beyond our expectations with a website that perfectly captures our brand essence."
-            </p>
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
-              <div>
-                <h4 className="font-bold">Client Name</h4>
-                <p className="text-sm text-gray-muted">Position, Company</p>
-              </div>
-            </div>
-          </div>
-        ))}
+  {testimonials.map((testimonial, index) => (
+    <div
+      key={index}
+      className="gth-card animate-fade-in"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="text-primary mb-4">★★★★★</div>
+      <p className="mb-6 text-gray-specific">"{testimonial.text}"</p>
+      <div className="flex items-center">
+        <img
+          src={testimonial.image}
+          alt={testimonial.name}
+          className="w-12 h-12 rounded-full object-cover mr-4 border border-gray-300 shadow"
+        />
+        <div>
+          <h4 className="font-bold">{testimonial.name}</h4>
+          <p className="text-sm text-gray-muted">{testimonial.title}</p>
+        </div>
       </div>
+    </div>
+  ))}
+</div>
+
+
       
       <div className="mt-16">
         <h3 className="text-xl font-bold mb-6 text-center">Our Brand Partners</h3>

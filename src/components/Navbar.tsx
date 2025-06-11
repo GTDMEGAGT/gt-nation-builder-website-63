@@ -1,19 +1,32 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const menuItems = [
-    { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Portfolio', path: '/portfolio' },
     { text: 'Skills', path: '/skills' },
@@ -32,23 +45,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-background py-4 px-6 shadow-md fixed w-full z-50 border-b border-border">
+    <nav className={`bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-3 px-4 sm:px-6 fixed w-full z-50 border-b border-border transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/93c859bf-5ffd-4de8-b833-d822b128a6bd.png" 
-            alt="GTH Digital Academy" 
-            className="h-12 md:h-14"
+            alt="GTH Digital" 
+            className="h-10 md:h-12"
           />
         </Link>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           {menuItems.map((item, index) => (
             <Link
               key={index}
               to={item.path}
-              className={`font-medium hover:text-primary transition-colors ${
+              className={`text-sm font-medium hover:text-primary transition-colors px-2 py-1 ${
                 isActive(item.path) ? 'text-primary' : 'text-foreground'
               }`}
             >
@@ -56,16 +69,26 @@ const Navbar = () => {
             </Link>
           ))}
           <ThemeToggle />
-          <Button asChild className="bg-primary text-white hover:bg-primary/90">
-            <Link to="/sponsor">Sponsor</Link>
+          <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/30 transition-all">
+            <Link to="/sponsor" className="px-4 py-2 rounded-lg">
+              Sponsor
+            </Link>
           </Button>
         </div>
         
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="lg:hidden flex items-center gap-3">
           <ThemeToggle />
+          <Button 
+            asChild 
+            variant="ghost" 
+            size="sm" 
+            className="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white"
+          >
+            <Link to="/sponsor">Sponsor</Link>
+          </Button>
           <button
-            className="text-foreground"
+            className="text-foreground p-2 rounded-md hover:bg-accent transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -84,23 +107,28 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute left-0 right-0 bg-background border-t border-border shadow-lg animate-fade-in">
-          <div className="flex flex-col py-4">
+        <div className="lg:hidden fixed inset-0 bg-background z-40 mt-16 animate-fade-in border-t border-border">
+          <div className="flex flex-col h-[calc(100vh-4rem)] overflow-y-auto bg-background">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className={`px-6 py-3 hover:bg-accent hover:text-primary transition-colors ${
-                  isActive(item.path) ? 'text-primary' : 'text-foreground'
+                className={`px-6 py-4 hover:bg-accent hover:text-primary transition-colors border-b border-border ${
+                  isActive(item.path) ? 'text-primary font-medium' : 'text-foreground'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.text}
               </Link>
             ))}
-            <div className="px-6 py-4">
-              <Button asChild className="bg-primary text-white w-full hover:bg-primary/90">
-                <Link to="/sponsor">Sponsor</Link>
+            <div className="px-6 py-4 mt-auto">
+              <Button 
+                asChild 
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20"
+              >
+                <Link to="/sponsor" onClick={() => setIsOpen(false)}>
+                  Sponsor
+                </Link>
               </Button>
             </div>
           </div>

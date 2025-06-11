@@ -120,7 +120,7 @@ const Navbar = () => {
                 {item.text}
               </Link>
             ))}
-            <div className="px-6 py-4 mt-auto">
+            <div className="px-6 py-4">
               <Button 
                 asChild 
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20"

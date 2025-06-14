@@ -35,42 +35,54 @@ const Portfolio = () => {
       title: "E-Commerce Platform",
       client: "Fashion Brand",
       description: "A complete e-commerce solution with advanced filtering, secure payment processing, and inventory management.",
-      tags: ["Next.js", "Tailwind CSS", "Stripe", "MongoDB"]
+      tags: ["Next.js", "Tailwind CSS", "Stripe", "MongoDB"],
+      image: "/luxe.png",
+    link: "https://luxe-attire-studio.vercel.app/"
     },
     {
       id: 2,
       title: "SaaS Dashboard",
       client: "Tech Startup",
       description: "Analytics dashboard for a subscription-based service with real-time data visualization and user management.",
-      tags: ["React", "Firebase", "Chart.js", "Material UI"]
+      tags: ["React", "Firebase", "Chart.js", "Material UI"],
+      image: "/saas.png",
+    link: "https://savvy-dash-startup-view.vercel.app/"
     },
     {
       id: 3,
       title: "Mobile Banking App",
       client: "Financial Institution",
       description: "Secure mobile banking application with transaction history, fund transfers, and account management.",
-      tags: ["Flutter", "Node.js", "PostgreSQL"]
+      tags: ["Flutter", "Node.js", "PostgreSQL"],
+      image: "/bank.png",
+    link: "https://finflow-swift-touch.vercel.app/"
     },
     {
       id: 4,
       title: "Educational Platform",
       client: "Online Academy",
       description: "Learning management system with course creation tools, student progress tracking, and payment processing.",
-      tags: ["Vue.js", "Express", "MongoDB", "AWS"]
+      tags: ["Vue.js", "Express", "MongoDB", "AWS"],
+      image: "/empower.png",
+    link: "https://empower-learning-space.vercel.app/"
     },
     {
       id: 5,
       title: "Real Estate Listing",
       client: "Property Management Company",
       description: "Property listing website with advanced search, virtual tours, and agent dashboards.",
-      tags: ["React", "Node.js", "Google Maps API"]
+      tags: ["React", "Node.js", "Google Maps API"],
+      image: "/estate.png",
+    link: "https://lovability-property-hub.vercel.app/"
     },
     {
       id: 6,
       title: "Health & Fitness App",
       client: "Wellness Brand",
       description: "Mobile application for fitness tracking, meal planning, and community engagement.",
-      tags: ["React Native", "Firebase", "GraphQL"]
+      tags: ["React Native", "Firebase", "GraphQL"],
+      image: "/fit.png",
+    link: "https://mindful-movement-life.vercel.app/"
     }
   ];
 
@@ -98,25 +110,57 @@ const Portfolio = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <div key={project.id} className="gth-card group hover:border-primary transition-all duration-300">
-                <div className="bg-gray-800 h-48 mb-4 rounded-md overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
-                </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-3">Client: {project.client}</p>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className="bg-gray-700 px-2 py-1 rounded-full text-xs text-gray-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Button variant="link" className="text-primary p-0 h-auto" asChild>
-                  <a href="#">View Case Study</a>
-                </Button>
-              </div>
-            ))}
+  <div key={project.id} className="gth-card group hover:border-primary transition-all duration-300">
+  <a
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block aspect-video mb-4 rounded-md overflow-hidden relative"
+  >
+    <img
+  src={project.image}
+  alt={project.title}
+  loading="lazy"
+  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+/>
+
+    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+  </a>
+
+  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      {project.title}
+    </a>
+  </h3>
+
+  <p className="text-sm text-gray-400 mb-3">Client: {project.client}</p>
+  <p className="text-gray-300 mb-4">{project.description}</p>
+
+  <div className="flex flex-wrap gap-2 mb-4">
+    {project.tags.map((tag, index) => (
+      <span
+        key={index}
+        className="bg-gray-700 px-2 py-1 rounded-full text-xs text-gray-300"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <Button variant="link" className="text-primary p-0 h-auto" asChild>
+    <a href={project.link} target="_blank" rel="noopener noreferrer">
+      View Case Study
+    </a>
+  </Button>
+</div>
+
+))}
+
           </div>
         </div>
       </section>

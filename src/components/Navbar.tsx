@@ -27,6 +27,7 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
+    { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Portfolio', path: '/portfolio' },
     { text: 'Skills', path: '/skills' },

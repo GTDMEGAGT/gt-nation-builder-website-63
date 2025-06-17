@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,10 +25,19 @@ const Sponsor = () => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value, type, checked } = e.target;
+    const target = e.target;
+    const { id, value, type } = target;
+    
+    let fieldValue: string | boolean;
+    if (type === "checkbox" && "checked" in target) {
+      fieldValue = (target as HTMLInputElement).checked;
+    } else {
+      fieldValue = value;
+    }
+    
     setFormData((prev) => ({
       ...prev,
-      [id]: type === "checkbox" ? checked : value,
+      [id]: fieldValue,
     }));
   };
 

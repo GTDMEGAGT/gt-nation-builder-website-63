@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Instagram, Linkedin, Youtube, MessageSquare } from 'lucide-react';
 import SocialIcons from './SocialIcons';
+import ChatBot from './ChatBot/ChatBot';
 import { useState, useEffect } from 'react';
 
 const Footer = () => {
@@ -93,22 +94,14 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Floating WhatsApp Button */}
-      <a 
-        href="https://wa.me/7085655759" 
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
-        aria-label="Contact on WhatsApp"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </a>
+      {/* AI Chat Assistant - replaces the floating WhatsApp button */}
+      <ChatBot />
 
       {/* Scroll-to-Top Button (shown only after scroll) */}
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-20 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
+          className="fixed bottom-20 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
           aria-label="Scroll to Top"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
